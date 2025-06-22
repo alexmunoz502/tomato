@@ -1,6 +1,6 @@
 # 🍅 Tomato
 
-**Tomato** is a simple, elegant, and open source Pomodoro timer app built to help you stay focused and productive. Designed with clarity and minimalism in mind, Tomato offers a distraction-free experience using the Pomodoro Technique — all in your browser.
+**[Tomato](https://tomato-time.com)** is a simple, elegant, and open source Pomodoro timer app built to help you stay focused and productive. Designed with clarity and minimalism in mind, Tomato offers a distraction-free experience using the Pomodoro Technique - all in your browser.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Made with ❤️](https://img.shields.io/badge/built%20with-react%20%2B%20next.js-blue)](https://nextjs.org/)
