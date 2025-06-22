@@ -42,7 +42,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --color-base-100: #320a15;
     --color-base-200: #57011c;
@@ -52,7 +52,7 @@
     --color-primary-500: #dc1f5f;
     --color-primary-700: #fb838f;
   }  
-}
+} */
 
 body {
   background: var(--color-base-100);
