@@ -5,22 +5,57 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme inline {  
+  --font-sans: var(--font-quicksand);
+  --font-heading: var(--font-poppins);
+  --font-mono: var(--font-quicksand);
+  --font-display: var(--font-delius-swash-caps);
+}
+
+@theme {
+  --spacing-content: 1200px;
+
+  --color-base-100: #FAF6FA;
+  --color-base-200: #FAF1F6;
+  --color-base-300: #F9EBF2;
+
+  --color-base-content-100: #320a15;
+  --color-base-content-200: #57011c;
+  --color-base-content-300: #940032;
+
+  --color-primary: #dc1f5f;
+  --color-primary-500: #dc1f5f;
+  --color-primary-700: #fb838f;
+
+  --animate-jiggle: jiggle 0.4s ease-in-out;
+
+  @keyframes jiggle {
+    0% 100% {
+      transform: scale(1.0)
+    }
+    25% {
+      transform: scale(0.9)
+    }
+    50% {
+      transform: scale(1.1)
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --color-base-100: #320a15;
+    --color-base-200: #57011c;
+    --color-base-300: #940032;
+
+    --color-primary: #dc1f5f;
+    --color-primary-500: #dc1f5f;
+    --color-primary-700: #fb838f;
+  }  
 }
 
 body {
-  background: var(--background);
+  background: var(--color-base-100);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-quicksand);
 }
