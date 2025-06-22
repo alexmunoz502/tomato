@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍅 Tomato
 
-## Getting Started
+**Tomato** is a simple, elegant, and open source Pomodoro timer app built to help you stay focused and productive. Designed with clarity and minimalism in mind, Tomato offers a distraction-free experience using the Pomodoro Technique — all in your browser.
 
-First, run the development server:
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Made with ❤️](https://img.shields.io/badge/built%20with-react%20%2B%20next.js-blue)](https://nextjs.org/)
+
+---
+
+## ✨ Features
+
+- ⏱️ Clean Pomodoro timer with focus, short break, and long break cycles
+- 🎯 Auto-progress between sessions (optional)
+- 🔔 Browser notifications when time is up
+- 🌗 Light/dark mode friendly
+- 💻 Responsive and mobile-friendly
+- 🧩 Built with [React](https://reactjs.org/), [Next.js](https://nextjs.org/), and [Tailwind CSS](https://tailwindcss.com/)
+- 🧑‍💻 Fully open source and MIT licensed
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/alexmunoz502/tomato.git
+cd tomato
+```
+
+### 2. Intall Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the app
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build for Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧪 Tech Stack
 
-## Learn More
+- **Frontend**: React + Next.js
+- **Styling**: Tailwind CSS
+- **State Management**: React Hooks
+- **Notifications**: Web Notification API
+- **Animation**: Tailwind transitions + subtle UI polish
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📙 Usage & License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This is an open-source personal project intended for educational and portfolio purposes.
 
-## Deploy on Vercel
+You are welcome to:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ✅ Explore and learn from the code
+- ✅ Suggest new features
+- ✅ Fork the project for personal or non-commercial use
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+However, you **may not**:
+
+- ❌ Use this project for commercial purposes
+- ❌ Sell or redistribute this app as your own
+- ❌ Submit pull requests
+
+> See the [LICENSE](LICENSE) for full terms.
+
+## 🍅 Why “Tomato”?
+
+The Pomodoro Technique was named after the tomato-shaped kitchen timer used by its creator, Francesco Cirillo. This app is a modern, digital homage to a timeless method.
+
+---
+
+## 📬 Feedback
+
+Have ideas, bugs, or feedback?  
+Open an [issue](https://github.com/your-username/tomato/issues) or [start a discussion](https://github.com/your-username/tomato/discussions) — I’d love to hear from you!
