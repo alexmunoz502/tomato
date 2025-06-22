@@ -21,7 +21,8 @@ const deliusSwashCaps = Delius_Swash_Caps({
 
 export const metadata: Metadata = {
   title: "Tomato",
-  description: "Slice your time. Boost your focus.",
+  description:
+    "Work should be hyggeligt. A cozy pomodoro timer for minimalists. ",
 };
 
 export default function RootLayout({

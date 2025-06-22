@@ -41,6 +41,7 @@ FROM base
 COPY --from=build /app /app
 
 # Entrypoint sets up the container.
+RUN chmod +x /app/docker-entrypoint.js
 ENTRYPOINT [ "/app/docker-entrypoint.js" ]
 
 # Start the server by default, this can be overwritten at runtime
