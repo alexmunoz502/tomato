@@ -9,13 +9,11 @@ const EVENT_TIMEOUT = "timeout";
 type TimerProps = {
   waitTime: number;
   onTimeout?: () => void;
-  autoStart?: boolean;
 };
 
 const Timer: React.FC<TimerProps> = ({
   waitTime = 5,
   onTimeout,
-  autoStart = false,
 }: TimerProps) => {
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [timeLeft, setTimeLeft] = useState<number>(waitTime);
@@ -44,7 +42,7 @@ const Timer: React.FC<TimerProps> = ({
   };
 
   const resetTimer = () => {
-    if (!autoStart) setIsRunning(false);
+    setIsRunning(false);
     setTimeLeft(waitTime);
   };
 

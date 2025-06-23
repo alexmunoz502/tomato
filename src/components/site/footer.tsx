@@ -3,7 +3,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-between py-2 px-4">
+    <footer className="flex flex-col items-center justify-between py-2 px-4 bg-base-content-100 text-base-100/75">
+      <span className="text-xs ">© 2025 Tomato </span>
       <Link
         href="https://github.com/alexmunoz502"
         className="flex gap-1 items-center"
@@ -16,7 +17,6 @@ const Footer = () => {
         />
         <span className="">Open Source on Github</span>
       </Link>
-      <span className="text-xs text-base-content/30">© 2025 Tomato </span>
     </footer>
   );
 };

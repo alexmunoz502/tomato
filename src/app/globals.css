@@ -27,6 +27,7 @@
   --color-primary-500: #dc1f5f;
   --color-primary-700: #fb838f;
 
+  --animate-spin: spin 5s linear infinite;
   --animate-jiggle: jiggle 0.4s ease-in-out;
 
   @keyframes jiggle {
@@ -40,6 +41,10 @@
       transform: scale(1.1)
     }
   }
+}
+
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
 
 /* @media (prefers-color-scheme: dark) {
