@@ -5,7 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {  
+@theme inline {
   --font-sans: var(--font-quicksand);
   --font-heading: var(--font-poppins);
   --font-mono: var(--font-quicksand);
@@ -15,9 +15,9 @@
 @theme {
   --spacing-content: 1200px;
 
-  --color-base-100: #FAF6FA;
-  --color-base-200: #FAF1F6;
-  --color-base-300: #F9EBF2;
+  --color-base-100: #faf6fa;
+  --color-base-200: #faf1f6;
+  --color-base-300: #f9ebf2;
 
   --color-base-content-100: #320a15;
   --color-base-content-200: #57011c;
@@ -32,19 +32,32 @@
 
   @keyframes jiggle {
     0% 100% {
-      transform: scale(1.0)
+      transform: scale(1);
     }
     25% {
-      transform: scale(0.9)
+      transform: scale(0.9);
     }
     50% {
-      transform: scale(1.1)
+      transform: scale(1.1);
     }
   }
 }
 
 @utility no-scrollbar {
   @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {
