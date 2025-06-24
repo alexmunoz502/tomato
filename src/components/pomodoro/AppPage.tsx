@@ -23,8 +23,7 @@ const AppPage: React.FC<AppPageProps> = ({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const easedOpacity = Math.pow(entry.intersectionRatio, 8);
-        setOpacity(easedOpacity);
+        setOpacity(Math.min(1, Math.pow(entry.intersectionRatio, 3)));
       },
       {
         root: appContainer.containerRef.current || null,
@@ -44,7 +43,7 @@ const AppPage: React.FC<AppPageProps> = ({
       id={id}
       ref={ref}
       className={`
-            pt-18 h-dvh snap-start flex flex-col
+            pt-18 pb-8 min-h-dvh snap-start flex flex-col
             ${className}
         `}
       style={{ opacity }}

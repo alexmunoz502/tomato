@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { PlusIcon, MinusIcon } from "@heroicons/react/16/solid";
 
 type NumberInputProps = {
@@ -12,6 +12,24 @@ type NumberInputProps = {
   step?: number;
 };
 
+// const AnimatedValue = ({
+//   value,
+//   disableAnimation,
+// }: {
+//   value: any;
+//   disableAnimation: boolean;
+// }) => {
+//   return (
+//     <span
+//       className={`
+
+//     `}
+//     >
+//       {value}
+//     </span>
+//   );
+// };
+
 const NumberInput = ({
   label,
   description,
@@ -21,12 +39,16 @@ const NumberInput = ({
   max = 100,
   step = 1,
 }: NumberInputProps) => {
+  const [animate, setAnimate] = useState(false);
+  const isFirstRender = useRef(true);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value === "") onChange(min);
     const newValue = parseInt(event.target.value, 10);
-    if (!isNaN(newValue) && newValue > 0) {
-      onChange(newValue);
-    }
-    if (event.target.value === "") onChange(0);
+    if (isNaN(newValue)) return;
+    if (newValue < min) onChange(min);
+    else if (newValue > max) onChange(max);
+    else onChange(newValue);
   };
 
   const handleIncrement = () => {
@@ -37,6 +59,17 @@ const NumberInput = ({
     onChange(Math.max(min, value - step));
   };
 
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    setAnimate(true);
+    const timeout = setTimeout(() => setAnimate(false), 50);
+    return () => clearTimeout(timeout);
+  }, [value]);
+
   return (
     <fieldset className="flex flex-col gap-2 items-start rounded w-fit">
       <label className="font-semibold">{label}</label>
@@ -46,7 +79,12 @@ const NumberInput = ({
       <div className="border rounded px-2 py-1 flex items-center">
         <button
           onClick={handleDecrement}
-          className="hover:bg-primary/50 p-1 rounded"
+          className={`
+            hover:bg-primary/50
+            p-1 rounded hover:cursor-pointer
+            transition-transform duration-100 ease-in-out
+            hover:scale-110 active:scale-95
+            `}
           type="button"
         >
           <MinusIcon className="size-5" />
@@ -56,11 +94,20 @@ const NumberInput = ({
           value={value}
           onChange={handleChange}
           aria-label="Number Input"
-          className="w-16 text-center border-none focus:outline-none no-spinner"
+          className={`
+            w-16 text-center border-none focus:outline-none no-spinner
+            transition-transform duration-50 ease-in-out
+            ${animate ? "scale-110" : "scale-100"}
+            `}
         />
         <button
           onClick={handleIncrement}
-          className="hover:bg-green-300/50 p-1 rounded"
+          className={`
+            hover:bg-green-300/50
+            p-1 rounded hover:cursor-pointer
+            transition-transform duration-100 ease-in-out
+            hover:scale-110 active:scale-95
+            `}
           type="button"
         >
           <PlusIcon className="size-5" />
