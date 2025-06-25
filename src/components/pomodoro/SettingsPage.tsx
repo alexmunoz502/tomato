@@ -1,5 +1,5 @@
 import AppPage from "./AppPage";
-import { usePomodoroSettings } from "@/contexts/pomodoroSettingsContext";
+import { usePomodoroSettings } from "@/contexts/PomodoroSettingsContext";
 import NumberInput from "../core/NumberInput";
 import QuickSelect from "../core/QuickSelect";
 import { minutesToSeconds } from "@/lib/fomatUtils";

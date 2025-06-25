@@ -1,8 +1,8 @@
 import AppPage from "./AppPage";
 import Timer from "@/components/pomodoro/Timer";
-import { usePomodoroSettings } from "@/contexts/pomodoroSettingsContext";
+import { usePomodoroSettings } from "@/contexts/PomodoroSettingsContext";
 import SettingsButton from "@/components/pomodoro/SettingsButton";
-import { usePomodoro, PomodoroState } from "@/contexts/pomodoroContext";
+import { usePomodoro, PomodoroState } from "@/contexts/PomodoroContext";
 
 const IndexPage = () => {
   const settings = usePomodoroSettings();

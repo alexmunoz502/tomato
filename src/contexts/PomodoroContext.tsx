@@ -1,5 +1,5 @@
 import { useState, createContext, useContext, useEffect } from "react";
-import { usePomodoroSettings } from "./pomodoroSettingsContext";
+import { usePomodoroSettings } from "./PomodoroSettingsContext";
 
 const DEFAULT_STATE: PomodoroState = "focus";
 
