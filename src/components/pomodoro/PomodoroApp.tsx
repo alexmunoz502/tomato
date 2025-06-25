@@ -2,8 +2,8 @@
 import AppContainer from "@/components/pomodoro/AppContainer";
 import IndexPage from "./IndexPage";
 import SettingsPage from "./SettingsPage";
-import { PomodoroSettingsProvider } from "@/contexts/pomodoroSettingsContext";
-import { PomodoroProvider } from "@/contexts/pomodoroContext";
+import { PomodoroSettingsProvider } from "@/contexts/PomodoroSettingsContext";
+import { PomodoroProvider } from "@/contexts/PomodoroContext";
 
 const PomodoroApp = () => {
   return (
