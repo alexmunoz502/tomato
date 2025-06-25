@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { eventBus } from "@/lib/eventBus";
 import { formatTime } from "@/lib/fomatUtils";
 import Image from "next/image";
+import { isNotificationSupported } from "@/lib/browserUtils";
 
 const EVENT_TIMEOUT = "timeout";
 
@@ -34,10 +35,12 @@ const Timer: React.FC<TimerProps> = ({
   };
 
   const requestPermission = () => {
-    if ("Notification" in window) {
+    if (isNotificationSupported()) {
       Notification.requestPermission().then((result) => {
-        console.log("Notification permission:", result);
+        console.log("Notification permission: ", result);
       });
+    } else {
+      console.log("Notifications not supported on this platform.");
     }
   };
 
@@ -47,13 +50,18 @@ const Timer: React.FC<TimerProps> = ({
   };
 
   useEffect(() => {
-    setTimeLeft(waitTime);
+    if (!isRunning) setTimeLeft(waitTime);
   }, [waitTime]);
 
   const handleTimeout = () => {
-    if (Notification.permission === "granted") {
-      new Notification("Time's up!", { body: "Your timer has completed." });
+    try {
+      if (Notification.permission === "granted") {
+        new Notification("Time's up!", { body: "Your timer has completed." });
+      }
+    } catch (error) {
+      console.warn("Nofication failed: ", error);
     }
+
     onTimeout && onTimeout();
     eventBus.emit(EVENT_TIMEOUT);
     resetTimer();
@@ -85,7 +93,7 @@ const Timer: React.FC<TimerProps> = ({
             <span
               key={i}
               className={`inline-block ${
-                char === ":" ? "w-8" : "w-14"
+                char === ":" ? "w-8 -translate-y-2" : "w-14"
               }  text-center`}
             >
               {char}

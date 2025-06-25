@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 import { usePomodoroSettings } from "./pomodoroSettingsContext";
 
 const DEFAULT_STATE: PomodoroState = "focus";
@@ -35,6 +35,11 @@ export const PomodoroProvider = ({
   const [state, setState] = useState<PomodoroState>(DEFAULT_STATE);
   const [focusCompletedCount, setFocusCompletedCount] = useState<number>(0);
 
+  useEffect(() => {
+    if (settings.focusGoalCount < focusCompletedCount)
+      setFocusCompletedCount(settings.focusGoalCount);
+  }, [settings.focusGoalCount]);
+
   const getNextState = (): PomodoroState => {
     if (state == "focus") {
       return focusCompletedCount + 1 == settings.focusGoalCount
@@ -56,9 +61,9 @@ export const PomodoroProvider = ({
   };
 
   const durationMap: Record<PomodoroState, number> = {
-    focus: settings.focusDuration,
-    shortBreak: settings.shortBreakDuration,
-    longBreak: settings.longBreakDuration,
+    focus: settings.focusDurationSeconds,
+    shortBreak: settings.shortBreakDurationSeconds,
+    longBreak: settings.longBreakDurationSeconds,
   };
 
   return (

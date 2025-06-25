@@ -2,6 +2,7 @@ import AppPage from "./AppPage";
 import { usePomodoroSettings } from "@/contexts/pomodoroSettingsContext";
 import NumberInput from "../core/NumberInput";
 import QuickSelect from "../core/QuickSelect";
+import { minutesToSeconds } from "@/lib/fomatUtils";
 
 export const SETTINGS_PAGE_ID = "settings";
 
@@ -14,7 +15,7 @@ const SettingsPage = () => {
         <h1 className="font-heading text-4xl">Settings</h1>
         <NumberInput
           label="Focus Sessions"
-          description="The amount of focus sessions before a long break."
+          description="The amount of focus sessions before a long break. Changing this option will reset your focus tracker."
           value={settings.focusGoalCount}
           onChange={settings.setFocusGoalCount}
           min={1}
@@ -27,76 +28,76 @@ const SettingsPage = () => {
         <NumberInput
           label="Focus Duration"
           description="The time to complete a focus session."
-          value={settings.focusDuration}
-          onChange={settings.setFocusDuration}
+          value={settings.focusDurationMinutes}
+          onChange={settings.setFocusDurationMinutes}
           min={1}
         />
         <div className="flex gap-4">
           <QuickSelect
-            value={5}
-            label="10 min"
-            onSelect={settings.setFocusDuration}
-          />
-          <QuickSelect
-            value={15}
-            label="15 min"
-            onSelect={settings.setFocusDuration}
+            value={20}
+            label="20 min"
+            onSelect={settings.setFocusDurationMinutes}
           />
           <QuickSelect
             value={25}
             label="25 min"
-            onSelect={settings.setFocusDuration}
+            onSelect={settings.setFocusDurationMinutes}
+          />
+          <QuickSelect
+            value={30}
+            label="30 min"
+            onSelect={settings.setFocusDurationMinutes}
           />
         </div>
         <NumberInput
           label="Short Break Duration"
           description="The time to take a short break"
-          value={settings.shortBreakDuration}
-          onChange={settings.setShortBreakDuration}
+          value={settings.shortBreakDurationMinutes}
+          onChange={settings.setShortBreakDurationMinutes}
           min={1}
         />
 
         <div className="flex gap-4">
           <QuickSelect
             value={5}
+            label="5 min"
+            onSelect={settings.setShortBreakDurationMinutes}
+          />
+          <QuickSelect
+            value={10}
             label="10 min"
-            onSelect={settings.setShortBreakDuration}
+            onSelect={settings.setShortBreakDurationMinutes}
           />
           <QuickSelect
             value={15}
             label="15 min"
-            onSelect={settings.setShortBreakDuration}
-          />
-          <QuickSelect
-            value={25}
-            label="25 min"
-            onSelect={settings.setShortBreakDuration}
+            onSelect={settings.setShortBreakDurationMinutes}
           />
         </div>
 
         <NumberInput
           label="Long Break Duration"
           description="The time to take a long break"
-          value={settings.longBreakDuration}
-          onChange={settings.setLongBreakDuration}
+          value={settings.longBreakDurationMinutes}
+          onChange={settings.setLongBreakDurationMinutes}
           min={1}
         />
 
         <div className="flex gap-4">
           <QuickSelect
-            value={5}
-            label="10 min"
-            onSelect={settings.setLongBreakDuration}
-          />
-          <QuickSelect
-            value={15}
-            label="15 min"
-            onSelect={settings.setLongBreakDuration}
+            value={20}
+            label="20 min"
+            onSelect={settings.setLongBreakDurationMinutes}
           />
           <QuickSelect
             value={25}
             label="25 min"
-            onSelect={settings.setLongBreakDuration}
+            onSelect={settings.setLongBreakDurationMinutes}
+          />
+          <QuickSelect
+            value={30}
+            label="30 min"
+            onSelect={settings.setLongBreakDurationMinutes}
           />
         </div>
       </div>

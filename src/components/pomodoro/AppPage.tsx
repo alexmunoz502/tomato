@@ -17,26 +17,27 @@ const AppPage: React.FC<AppPageProps> = ({
   const ref = useRef<HTMLElement>(null);
   const [opacity, setOpacity] = useState(1);
 
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
+  // TODO: Fix fade away scroll animation
+  //   useEffect(() => {
+  //     const node = ref.current;
+  //     if (!node) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setOpacity(Math.min(1, Math.pow(entry.intersectionRatio, 3)));
-      },
-      {
-        root: appContainer.containerRef.current || null,
-        threshold: Array.from({ length: 20 }, (_, i) => i / 20),
-      }
-    );
+  //     const observer = new IntersectionObserver(
+  //       ([entry]) => {
+  //         setOpacity(Math.min(1, Math.pow(entry.intersectionRatio, 3)));
+  //       },
+  //       {
+  //         root: appContainer.containerRef.current || null,
+  //         threshold: Array.from({ length: 20 }, (_, i) => i / 20),
+  //       }
+  //     );
 
-    observer.observe(node);
+  //     observer.observe(node);
 
-    return () => {
-      observer.unobserve(node);
-    };
-  }, [appContainer.containerRef]);
+  //     return () => {
+  //       observer.unobserve(node);
+  //     };
+  //   }, [appContainer.containerRef]);
 
   return (
     <section

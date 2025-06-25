@@ -10,7 +10,7 @@ const SettingsButton = () => {
 
   return (
     <button
-      onMouseDown={handleClick}
+      onClick={handleClick}
       aria-label="Open Settings"
       className={`
         absolute bottom-0 right-0 opacity-50 m-4

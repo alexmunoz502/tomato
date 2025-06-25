@@ -4,7 +4,7 @@ import { Bars3Icon } from "@heroicons/react/16/solid";
 
 const Navbar = () => {
   return (
-    <nav className="absolute top-0 left-0 w-full flex justify-between items-center p-4">
+    <nav className="absolute top-0 left-0 w-full flex justify-between items-center p-4 bg-base-100">
       <Link href="/" className="flex gap-2 items-center">
         <Image
           src="/logo.png"

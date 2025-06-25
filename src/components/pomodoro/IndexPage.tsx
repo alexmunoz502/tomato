@@ -1,5 +1,5 @@
 import AppPage from "./AppPage";
-import Timer from "@/components/pomodoro/timer";
+import Timer from "@/components/pomodoro/Timer";
 import { usePomodoroSettings } from "@/contexts/pomodoroSettingsContext";
 import SettingsButton from "@/components/pomodoro/SettingsButton";
 import { usePomodoro, PomodoroState } from "@/contexts/pomodoroContext";
@@ -27,7 +27,7 @@ const IndexPage = () => {
           </span>
           <span className="text-4xl mx-auto">{titleMap[pomodoro.state]}</span>
           <span className="text-base-content-100/75">
-            Next up: {titleMap[pomodoro.nextState]}
+            Next: {titleMap[pomodoro.nextState]}
           </span>
         </div>
 
