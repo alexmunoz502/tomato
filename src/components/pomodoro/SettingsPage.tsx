@@ -10,8 +10,8 @@ const SettingsPage = () => {
   const settings = usePomodoroSettings();
 
   return (
-    <AppPage id={SETTINGS_PAGE_ID} className="px-8">
-      <div className="flex flex-col gap-8 overflow-y-scroll lg:overflow-y-auto">
+    <AppPage id={SETTINGS_PAGE_ID} className="px-7">
+      <div className="flex flex-col gap-8 overflow-y-scroll lg:overflow-y-auto p-1">
         <h1 className="font-heading text-4xl">Settings</h1>
         <NumberInput
           label="Focus Sessions"
