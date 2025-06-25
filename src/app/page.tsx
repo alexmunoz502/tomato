@@ -1,11 +1,9 @@
-import PomodoroApp from "@/components/pomodoro/pomodoroApp";
+import PomodoroApp from "@/components/pomodoro/PomodoroApp";
 
 export default function Home() {
   return (
-    <>
-      <main className="grow w-full max-w-content mx-auto pt-48">
-        <PomodoroApp />
-      </main>
-    </>
+    <main>
+      <PomodoroApp />
+    </main>
   );
 }

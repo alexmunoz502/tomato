@@ -33,9 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${quicksand.variable} ${poppins.variable} ${deliusSwashCaps.variable} antialiased flex flex-col min-h-screen`}
+        className={`${quicksand.variable} ${poppins.variable} ${deliusSwashCaps.variable} antialiased`}
       >
-        <header>
+        <header className="relative m-auto max-w-content z-50">
           <Navbar />
         </header>
         {children}
