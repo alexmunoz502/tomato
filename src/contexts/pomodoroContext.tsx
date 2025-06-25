@@ -36,8 +36,10 @@ export const PomodoroProvider = ({
   const [focusCompletedCount, setFocusCompletedCount] = useState<number>(0);
 
   useEffect(() => {
-    if (settings.focusGoalCount < focusCompletedCount)
-      setFocusCompletedCount(settings.focusGoalCount);
+    // Reset focus tracker to avoid bugs. Currently, the state machine makes
+    // assumptions based on current state which can be thrown out of whack if
+    // this value changes mid-cycle.
+    setFocusCompletedCount(0);
   }, [settings.focusGoalCount]);
 
   const getNextState = (): PomodoroState => {

@@ -15,7 +15,7 @@ const SettingsPage = () => {
         <h1 className="font-heading text-4xl">Settings</h1>
         <NumberInput
           label="Focus Sessions"
-          description="The amount of focus sessions before a long break. Changing this option will reset your focus tracker."
+          description="The amount of focus sessions before a long break. Changing this value will reset your focus tracker."
           value={settings.focusGoalCount}
           onChange={settings.setFocusGoalCount}
           min={1}
